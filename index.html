@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>run my python files</title>
+<?PHP
+echo shell_exec("test.py \"Parameter 1\"");
+?>
+</head>
+
+<body>
+import sys
+input=sys.argv[1]
+print(input)
+</body>
+</html>
