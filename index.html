@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-<meta charset="utf-8">
-<title>run my python files</title>
-<?PHP
-echo shell_exec("test.py \"Parameter 1\"");
-?>
-</head>
+    <head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython_stdlib.min.js"></script>
+    </head>
+    <body onload="brython()">
+        <button id='test-button'>눌러봐요</button>
 
-<body>
-import sys
-input=sys.argv[1]
-print(input)
-</body>
+    </body>
 </html>
+<script type="text/python">
+    from browser import document
+    from browser.widgets.dialog import InfoDialog
+
+
+    def alert(event):
+        InfoDialog("Hello", "버튼이 눌렸다!")
+    
+    document["test-button"].bind("click", alert)
+
+</script>
